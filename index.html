@@ -27,20 +27,53 @@
     <main>
         <section id="about">
             <h2>About Me</h2>
-            <p id="about-text">Your biography and background information.</p>
-        </section>
+            <p id="about-text">I am a passionate writer of fantasy novels and short stories. My journey began at a young age, drawing inspiration from the enchanting tales I read. Over the years, I have crafted my unique worlds filled with magic, adventure, and unforgettable characters. Welcome to EnchantedInk, where imagination comes to life.</p>
+        </section> 
+
         <section id="books">
             <h2>Books/Projects</h2>
-            <p id="books-text">Detailed descriptions of your books or short stories.</p>
+            <div id="books-container">
+                <div class="book">
+                    <img src="images/book1.jpg" alt="Book 1 Cover">
+                    <p id="books-text">Title: The Enchanted Realm<br>Description: A captivating tale of magic and mystery.</p>
+                </div>
+                <div class="book">
+                    <img src="images/book2.jpg" alt="Book 2 Cover">
+                    <p id="books-text">Title: Shadows of the Forgotten<br>Description: An epic adventure through lost civilizations.</p>
+                </div>
+            </div>
         </section>
+
         <section id="blog">
             <h2>Blog</h2>
-            <p id="blog-text">Regular posts about your writing processes, inspirations, and news.</p>
+            <article>
+                <h3>My Writing Journey</h3>
+                <p id="blog-text">I started writing at a young age, inspired by the magical worlds I read about...</p>
+            </article>
+            <article>
+                <h3>Behind the Scenes of 'The Enchanted Realm'</h3>
+                <p id="blog-text">Creating 'The Enchanted Realm' was a journey of discovery and imagination...</p>
+            </article>
         </section>
+        
         <section id="contact">
-            <h2>Contact</h2>
-            <p id="contact-text">Contact information and a contact form.</p>
-        </section>
+    <h2>Contact</h2>
+    <p id="contact-text">Feel free to reach out to me for any inquiries or just to say hello. You can contact me at:</p>
+    <ul>
+        <li>Email: enchantedink@example.com</li>
+        <li>Social Media: [Links to your social media profiles]</li>
+    </ul>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
     </main>
     <footer>
         <p>&copy; 2024 EnchantedInk. All rights reserved.</p>
