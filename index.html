@@ -9,13 +9,18 @@
 </head>
 <body>
     <header>
-        <h1 id="title">Welcome to EnchantedInk</h1>
-        <p id="subtitle">Author of Fantasy Novels and Short Stories</p>
+        <div class="header-content">
+            <img src="images/logo.png" alt="EnchantedInk Logo" class="logo">
+          <div class="title-container">
+            <h1 id="title">Welcome to EnchantedInk</h1>
+            <p id="subtitle">Author of Fantasy Novels and Short Stories</p>  
+          </div>       
+        </div>
         <div id="language-switcher">
-            <button onclick="setLanguage('en')">English</button>
-            <button onclick="setLanguage('de')">Deutsch</button>
+            <button id="language-toggle" onclick="toggleLanguage()">EN | DE</button>
         </div>
     </header>
+    
     <nav>
         <ul>
             <li><a href="#about" id="nav-about">About</a></li>

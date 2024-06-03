@@ -25,6 +25,13 @@ const translations = {
     }
 };
 
+let currentLanguage = 'en';
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'en' ? 'de' : 'en';
+    setLanguage(currentLanguage);
+}
+
 function setLanguage(language) {
     document.getElementById('title').innerText = translations[language].title;
     document.getElementById('subtitle').innerText = translations[language].subtitle;
@@ -36,4 +43,7 @@ function setLanguage(language) {
     document.getElementById('books-text').innerText = translations[language].booksText;
     document.getElementById('blog-text').innerText = translations[language].blogText;
     document.getElementById('contact-text').innerText = translations[language].contactText;
+
+    // Update button class
+    document.getElementById('language-toggle').classList.toggle('de', language === 'de');
 }

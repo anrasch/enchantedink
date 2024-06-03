@@ -1,3 +1,7 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,10 +10,42 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #000000;
     color: white;
     padding: 1rem;
     text-align: center;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0; /* Abstand zum Logo */
+}
+
+#subtitle {
+    margin-top: 5px; /* Abstand zum h1 */
+    font-size: 1rem; /* Optional: Schriftgröße anpassen */
+    font-family: 'Cormorant Garamond', serif;
+    padding-left: 0;
+}
+
+header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; /* Die Schriftgröße wird auf 3rem gesetzt, was größer und auffälliger ist */
+    margin: 0; /* Abstand zum Logo */
+}
+
+.logo {
+    width: 80px; /* Setzen Sie die Breite Ihres Logos an */
+    height: auto;
 }
 
 nav ul {
@@ -17,20 +53,21 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    background-color: #444;
+    background-color: #000000;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0.5rem;
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 main {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 section {
@@ -38,7 +75,7 @@ section {
 }
 
 footer {
-    background-color: #333;
+    background-color: #000000;
     color: white;
     text-align: center;
     padding: 1rem;
@@ -48,15 +85,85 @@ footer {
     margin-top: 10px;
 }
 
-#language-switcher button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #555;
+#language-toggle {
+    width: 120px; /* Breitere Schaltfläche */
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #333 50%, white 50%);
     color: white;
-    border: none;
+    border: 1px solid #555;
+    border-radius: 20px; /* Abgerundete Ecken */
     cursor: pointer;
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out; /* Hinzufügen der Transition-Effekte */
+    position: relative;
+    overflow: hidden;
 }
 
-#language-switcher button:hover {
-    background-color: #777;
+#language-toggle span {
+    position: relative;
+    z-index: 1;
+}
+
+#language-toggle::before {
+    content: "EN";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    transition: color 0.5s ease-in-out; /* Hinzufügen der Transition-Effekte */
+}
+
+#language-toggle::after {
+    content: "DE";
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    color: #333;
+    transition: color 0.5s ease-in-out; /* Hinzufügen der Transition-Effekte */
+}
+
+#language-toggle.de {
+    background: linear-gradient(45deg, white 50%, #333 50%);
+}
+
+#language-toggle.de::before {
+    color: #333;
+}
+
+#language-toggle.de::after {
+    color: white;
+}
+
+#language-toggle:hover {
+    background: linear-gradient(45deg, #555 50%, white 50%);
+    color: white;
+}
+/* Media Queries für größere Bildschirme */
+@media (min-width: 600px) {
+    .header-content {
+        flex-direction: row;
+    }
+
+    .title-container {
+        align-items: flex-start;
+        margin-left: 10px;
+    }
+
+    header h1 {
+        font-size: 3rem; /* Größere Schriftgröße für größere Bildschirme */
+    }
+
+    #subtitle {
+        font-size: 1.25rem; /* Größere Schriftgröße für größere Bildschirme */
+        padding-left: 10px;
+    }
+
+    .logo {
+        width: 100px; /* Größere Breite für das Logo */
+    }
+
+    main {
+        padding: 2rem; /* Größere Polsterung für größere Bildschirme */
+    }
 }
