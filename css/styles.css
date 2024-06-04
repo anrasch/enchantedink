@@ -86,16 +86,18 @@ footer {
 }
 
 #language-toggle {
-    width: 120px; /* Breitere Schaltfläche */
+    width: 60px; /* Breitere Schaltfläche */
     padding: 10px 20px;
     background: linear-gradient(45deg, #333 50%, white 50%);
     color: white;
     border: 1px solid #555;
     border-radius: 20px; /* Abgerundete Ecken */
     cursor: pointer;
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out; /* Hinzufügen der Transition-Effekte */
+    transition: background 1s ease, color 1s ease; /* Verlängerte Übergangszeit und weichere Übergangsfunktion */
     position: relative;
     overflow: hidden;
+    font-size: 0.9rem; /* Optional: Schriftgröße anpassen */
+    font-family: 'Cormorant Garamond', serif;
 }
 
 #language-toggle span {
@@ -110,7 +112,7 @@ footer {
     left: 10%;
     transform: translateY(-50%);
     color: white;
-    transition: color 0.5s ease-in-out; /* Hinzufügen der Transition-Effekte */
+    transition: color 1s ease; /* Verlängerte Übergangszeit und weichere Übergangsfunktion */
 }
 
 #language-toggle::after {
@@ -120,7 +122,7 @@ footer {
     right: 10%;
     transform: translateY(-50%);
     color: #333;
-    transition: color 0.5s ease-in-out; /* Hinzufügen der Transition-Effekte */
+    transition: color 1s ease; /* Verlängerte Übergangszeit und weichere Übergangsfunktion */
 }
 
 #language-toggle.de {
@@ -135,10 +137,6 @@ footer {
     color: white;
 }
 
-#language-toggle:hover {
-    background: linear-gradient(45deg, #555 50%, white 50%);
-    color: white;
-}
 /* Media Queries für größere Bildschirme */
 @media (min-width: 600px) {
     .header-content {
