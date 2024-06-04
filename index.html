@@ -30,26 +30,52 @@
             <li><a href="#blog" id="nav-blog" class="hidden">Blog</a></li>
         </ul>
     </nav>
-    
+
     <main>
         <section id="about">
-            <h2>About Me</h2>
-            <p id="about-text">I am a passionate writer of fantasy novels and short stories. My journey began at a young age, drawing inspiration from the enchanting tales I read. Over the years, I have crafted my unique worlds filled with magic, adventure, and unforgettable characters. Welcome to EnchantedInk, where imagination comes to life.</p>
+            <h2 id="aboutMe" class="about">About Me</h2>
+            <p id="about-text" class="about">Hi, I'm Anthony and I'm a writer. Currently, I'm working on a series of short stories as well as writing a book. Besides writing, I have developed a passion for web design, which led to the creation of this website. On my website, you'll find my latest projects and publications. I'm excited to share my stories and creative projects with you. You can reach out to me through social media; the links are at the end of the website. Thank you for visiting!</p>
         </section> 
 
         <section id="books">
             <h2>Books</h2>
-            <div id="books-container">
-                <div class="book">
-                    <img src="images/book1.jpg" alt="Book 1 Cover">
-                    <p id="books-text">Title: The Enchanted Realm<br>Description: A captivating tale of magic and mystery.</p>
+            <div class="carousel-wrapper">
+                <button class="carousel-button prev" onclick="rotateCarousel(-1)">&#10094;</button>
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <div class="flipper" onclick="flipCard(this)">
+                            <div class="front">
+                                <img src="images/book1.jpg" alt="Book 1">
+                            </div>
+                            <div class="back">
+                                <h3>Book Title 1</h3>
+                                <p>Some information about Book 1.</p>
+                                <button onclick="downloadBook('book1.pdf', event)">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="flipper" onclick="flipCard(this)">
+                            <div class="front">
+                                <img src="images/book2.jpg" alt="Book 2">
+                            </div>
+                            <div class="back">
+                                <h3>Book Title 2</h3>
+                                <p>Some information about Book 2.</p>
+                                <button onclick="downloadBook('book2.pdf', event)">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Weitere Bücher hier hinzufügen -->
                 </div>
-                <div class="book">
-                    <img src="images/book2.jpg" alt="Book 2 Cover">
-                    <p id="books-text">Title: Shadows of the Forgotten<br>Description: An epic adventure through lost civilizations.</p>
-                </div>
+                <button class="carousel-button next" onclick="rotateCarousel(1)">&#10095;</button>
             </div>
         </section>
+        
+        
+        
+        
+        
 
         <section id="projects">
             <h2>Projects</h2>

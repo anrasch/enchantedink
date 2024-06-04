@@ -7,11 +7,12 @@ const translations = {
         navProjects: "Projects",
         navBlog: "Blog",
         navContact: "Contact",
-        aboutText: "Your biography and background information.",
+        aboutText: "Hi, I'm Anthony and I'm a writer. Currently, I'm working on a series of short stories as well as writing a book. Besides writing, I have developed a passion for web design, which led to the creation of this website. On my website, you'll find my latest projects and publications. I'm excited to share my stories and creative projects with you. You can reach out to me through social media; the links are at the end of the website. Thank you for visiting!",
         booksText: "Detailed descriptions of your books or short stories.",
         projectsText: "Detailed descriptions of your projects.",
         blogText: "Regular posts about your writing processes, inspirations, and news.",
-        contactText: "Contact information and a contact form."
+        contactText: "Contact information and a contact form.",
+        aboutMe: "About Me",
     },
     de: {
         title: "Willkommen bei EnchantedInk",
@@ -21,11 +22,12 @@ const translations = {
         navProjects: "Projekte",
         navBlog: "Blog",
         navContact: "Kontakt",
-        aboutText: "Ihre Biografie und Hintergrundinformationen.",
+        aboutText: "Hallo, ich bin Anthony und ich bin Schriftsteller. Derzeit arbeite ich an einer Reihe von Kurzgeschichten sowie an einem Buch. Neben dem Schreiben habe ich eine Leidenschaft für Webdesign entwickelt, was zur Erstellung dieser Website geführt hat. Auf meiner Website finden Sie meine neuesten Projekte und Veröffentlichungen. Ich freue mich darauf, meine Geschichten und kreativen Projekte mit Ihnen zu teilen. Sie können mich über soziale Medien erreichen; die Links finden Sie am Ende der Website. Vielen Dank für Ihren Besuch!",
         booksText: "Detaillierte Beschreibungen Ihrer Bücher oder Kurzgeschichten.",
         projectsText: "Detaillierte Beschreibungen Ihrer Projekte.",
         blogText: "Regelmäßige Beiträge über Ihre Schreibprozesse, Inspirationen und Neuigkeiten.",
-        contactText: "Kontaktinformationen und ein Kontaktformular."
+        contactText: "Kontaktinformationen und ein Kontaktformular.",
+        aboutMe: "Über mich",
     }
 };
 
@@ -49,7 +51,36 @@ function setLanguage(language) {
     document.getElementById('projects-text').innerText = translations[language].projectsText;
     document.getElementById('blog-text').innerText = translations[language].blogText;
     document.getElementById('contact-text').innerText = translations[language].contactText;
+    document.getElementById('aboutMe').innerText = translations[language].aboutMe;
 
     // Update button class
     document.getElementById('language-toggle').classList.toggle('de', language === 'de');
 }
+
+let angle = 0;
+
+function rotateCarousel(direction) {
+    const items = document.querySelectorAll('.carousel-item');
+    angle += direction * 120; // Adjust this value based on the number of items
+    items.forEach((item, index) => {
+        const itemAngle = angle + index * 120; // Adjust this value based on the number of items
+        item.style.transform = `rotateY(${itemAngle}deg) translateZ(400px)`;
+    });
+}
+
+function flipCard(element) {
+    element.classList.toggle('flipped');
+}
+
+function downloadBook(filename, event) {
+    event.stopPropagation(); // Prevent flip event from triggering
+    const link = document.createElement('a');
+    link.href = `downloads/${filename}`;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
+
