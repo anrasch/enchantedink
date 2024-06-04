@@ -39,44 +39,38 @@
 
         <section id="books">
             <h2>Books</h2>
-            <div class="carousel-wrapper">
-                <button class="carousel-button prev" onclick="rotateCarousel(-1)">&#10094;</button>
-                <div class="carousel">
-                    <div class="carousel-item">
-                        <div class="flipper" onclick="flipCard(this)">
-                            <div class="front">
-                                <img src="images/book1.jpg" alt="Book 1">
-                            </div>
-                            <div class="back">
-                                <h3>Book Title 1</h3>
-                                <p>Some information about Book 1.</p>
-                                <button onclick="downloadBook('book1.pdf', event)">Download</button>
-                            </div>
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <div class="flipper" onclick="flipCard(this)">
+                        <div class="front">
+                            <img src="images/book1.jpg" alt="Book 1">
+                            <div class="overlay">View Details</div>
+                        </div>
+                        <div class="back">
+                            <h3>Book Title 1</h3>
+                            <p>Some information about Book 1.</p>
+                            <button onclick="downloadBook('book1.pdf', event)">Download</button>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="flipper" onclick="flipCard(this)">
-                            <div class="front">
-                                <img src="images/book2.jpg" alt="Book 2">
-                            </div>
-                            <div class="back">
-                                <h3>Book Title 2</h3>
-                                <p>Some information about Book 2.</p>
-                                <button onclick="downloadBook('book2.pdf', event)">Download</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Weitere Bücher hier hinzufügen -->
                 </div>
-                <button class="carousel-button next" onclick="rotateCarousel(1)">&#10095;</button>
+                <div class="flip-card">
+                    <div class="flipper" onclick="flipCard(this)">
+                        <div class="front">
+                            <img src="images/book2.jpg" alt="Book 2">
+                            <div class="overlay">View Details</div>
+                        </div>
+                        <div class="back">
+                            <h3>Book Title 2</h3>
+                            <p>Some information about Book 2.</p>
+                            <button onclick="downloadBook('book2.pdf', event)">Download</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Weitere Flip-Karten hier hinzufügen -->
             </div>
         </section>
         
         
-        
-        
-        
-
         <section id="projects">
             <h2>Projects</h2>
             <p id="projects-text">Detailed descriptions of your projects.</p>
