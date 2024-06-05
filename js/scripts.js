@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const languageToggle = document.getElementById('language-toggle');
+    
+    // Initial language setup (English by default)
+    setLanguage(currentLanguage);
+
+    languageToggle.addEventListener('click', function() {
+        toggleLanguage();
+    });
+});
+
 const translations = {
     en: {
         title: "Welcome to EnchantedInk",
@@ -31,7 +42,7 @@ const translations = {
     }
 };
 
-let currentLanguage = 'en';
+let currentLanguage = 'en'; // Set the initial language to English
 
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'en' ? 'de' : 'en';
@@ -47,26 +58,24 @@ function setLanguage(language) {
     document.getElementById('nav-blog').innerText = translations[language].navBlog;
     document.getElementById('nav-contact').innerText = translations[language].navContact;
     document.getElementById('about-text').innerText = translations[language].aboutText;
-    document.getElementById('books-text').innerText = translations[language].booksText;
-    document.getElementById('projects-text').innerText = translations[language].projectsText;
-    document.getElementById('blog-text').innerText = translations[language].blogText;
+    if (document.getElementById('books-text')) {
+        document.getElementById('books-text').innerText = translations[language].booksText;
+    }
+    if (document.getElementById('projects-text')) {
+        document.getElementById('projects-text').innerText = translations[language].projectsText;
+    }
+    if (document.getElementById('blog-text')) {
+        document.getElementById('blog-text').innerText = translations[language].blogText;
+    }
     document.getElementById('contact-text').innerText = translations[language].contactText;
     document.getElementById('aboutMe').innerText = translations[language].aboutMe;
 
-    // Update button class
-    document.getElementById('language-toggle').classList.toggle('de', language === 'de');
+    // Update the toggle indicator and data-lang attribute
+    const languageToggle = document.getElementById('language-toggle');
+    languageToggle.classList.toggle('de', language === 'de');
+    languageToggle.setAttribute('data-lang', language === 'de' ? 'EN' : 'DE');
 }
 
-let angle = 0;
-
-function rotateCarousel(direction) {
-    const items = document.querySelectorAll('.carousel-item');
-    angle += direction * 120; // Adjust this value based on the number of items
-    items.forEach((item, index) => {
-        const itemAngle = angle + index * 120; // Adjust this value based on the number of items
-        item.style.transform = `rotateY(${itemAngle}deg) translateZ(400px)`;
-    });
-}
 
 function flipCard(element) {
     element.classList.toggle('flipped');
@@ -81,6 +90,3 @@ function downloadBook(filename, event) {
     link.click();
     document.body.removeChild(link);
 }
-
-
-
