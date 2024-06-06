@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navProjects: "Projects",
             navBlog: "Blog",
             navContact: "Contact",
-            aboutText: "Hi, I'm Anthony and I'm a writer. Currently, I'm working on a series of short stories as well as writing a book. Besides writing, I have developed a passion for web design, which led to the creation of this website. On my website, you'll find my latest projects and publications. I'm excited to share my stories and creative projects with you. You can reach out to me through social media; the links are at the end of the website. Thank you for visiting!",
+            aboutText: "Hi, I'm Anthony and I'm a writer...",
             booksText: "Detailed descriptions of your books or short stories.",
             projectsText: "Detailed descriptions of your projects.",
             blogText: "Regular posts about your writing processes, inspirations, and news.",
@@ -16,8 +16,22 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutMe: "About Me",
             shortStories: "Short Stories",
             bookTitle1: "A Day in Nova Polis",
-            textShort: "A captivating collection of standalone short stories from the mysterious metropolis of Nova Polis",
-            booktext1: "A Day in Nova Polis, follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.",
+            textShort: "A captivating collection of standalone short stories...",
+            booktext1: "A Day in Nova Polis, follows Alex...",
+            projects: {
+                1: {
+                    title: "Project Title 1",
+                    image: "images/project1.jpg",
+                    description: "A brief description of Project 1.",
+                    details: "Detailed information about Project 1. This section can include the project's objectives, challenges, solutions, and results."
+                },
+                2: {
+                    title: "Project Title 2",
+                    image: "images/project2.jpg",
+                    description: "A brief description of Project 2.",
+                    details: "Detailed information about Project 2. This section can include the project's objectives, challenges, solutions, and results."
+                }
+            }
         },
         de: {
             title: "Willkommen bei EnchantedInk",
@@ -27,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navProjects: "Projekte",
             navBlog: "Blog",
             navContact: "Kontakt",
-            aboutText: "Hallo, ich bin Anthony und ich bin Schriftsteller. Derzeit arbeite ich an einer Reihe von Kurzgeschichten sowie an einem Buch. Neben dem Schreiben habe ich eine Leidenschaft für Webdesign entwickelt, was zur Erstellung dieser Website geführt hat. Auf meiner Website finden Sie meine neuesten Projekte und Veröffentlichungen. Ich freue mich darauf, meine Geschichten und kreativen Projekte mit Ihnen zu teilen. Sie können mich über soziale Medien erreichen; die Links finden Sie am Ende der Website. Vielen Dank für Ihren Besuch!",
+            aboutText: "Hallo, ich bin Anthony und ich bin Schriftsteller...",
             booksText: "Detaillierte Beschreibungen Ihrer Bücher oder Kurzgeschichten.",
             projectsText: "Detaillierte Beschreibungen Ihrer Projekte.",
             blogText: "Regelmäßige Beiträge über Ihre Schreibprozesse, Inspirationen und Neuigkeiten.",
@@ -35,8 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutMe: "Über mich",
             shortStories: "Kurzgeschichten",
             bookTitle1: "Ein Tag in Nova Polis",
-            textShort: "Eine faszinierende Sammlung eigenständiger Kurzgeschichten aus der mysteriösen Metropole Nova Polis",
-            booktext1: "Ein Tag in Nova Polis folgt Alex, einem Kurier, der sich durch eine futuristische Stadt der Gegensätze bewegt. Von dem Luxus der Zenith Heights über die Lebendigkeit des Neon Districts, die Industrie des Mechanica Districts und die Ruhe der Elysium Gardens bis hin zu den herausfordernden Dystopia Slums. Durch seine Lieferungen entdeckt Alex die vielfältigen und menschlichen Facetten von Nova Polis."
+            textShort: "Eine faszinierende Sammlung eigenständiger Kurzgeschichten...",
+            booktext1: "Ein Tag in Nova Polis folgt Alex...",
+            projects: {
+                1: {
+                    title: "Projekt Titel 1",
+                    image: "images/project1.jpg",
+                    description: "Eine kurze Beschreibung des Projekts 1.",
+                    details: "Detaillierte Informationen über das Projekt 1. Dieser Abschnitt kann die Ziele, Herausforderungen, Lösungen und Ergebnisse des Projekts enthalten."
+                },
+                2: {
+                    title: "Projekt Titel 2",
+                    image: "images/project2.jpg",
+                    description: "Eine kurze Beschreibung des Projekts 2.",
+                    details: "Detaillierte Informationen über das Projekt 2. Dieser Abschnitt kann die Ziele, Herausforderungen, Lösungen und Ergebnisse des Projekts enthalten."
+                }
+            }
         }
     };
 
@@ -64,6 +92,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Update the project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            const projectId = card.getAttribute('data-project');
+            const project = translations[language].projects[projectId];
+            if (project) {
+                card.querySelector('.project-title').innerText = project.title;
+                card.querySelector('.project-description').innerText = project.description;
+                card.querySelector('.project-image').src = project.image;
+            } else {
+                console.warn(`Project with ID '${projectId}' not found in translations.`);
+            }
+        });
+
         // Update the toggle indicator and data-lang attribute
         const languageToggle = document.getElementById('language-toggle');
         languageToggle.classList.toggle('de', language === 'de');
@@ -73,46 +114,50 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial language setup
     setLanguage(currentLanguage);
 
+    const modal = document.getElementById('project-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalImage = document.getElementById('modal-image');
+    const modalDescription = document.getElementById('modal-description');
+    const modalDetails = document.getElementById('modal-details');
+    const closeBtn = document.querySelector('.close-btn');
+
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project');
+            const project = translations[currentLanguage].projects[projectId];
+
+            if (project) {
+                modalTitle.innerText = project.title;
+                modalImage.src = project.image;
+                modalDescription.innerText = project.description;
+                modalDetails.innerText = project.details;
+
+                modal.style.display = 'flex';
+            } else {
+                console.warn(`Project with ID '${projectId}' not found in translations.`);
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Language toggle functionality
     const languageToggle = document.getElementById('language-toggle');
     languageToggle.addEventListener('click', function() {
         toggleLanguage();
     });
 
-    // Projekt-Daten
-        const projects = {
-            1: {
-                title: "Project Title 1",
-                image: "images/project1.jpg",
-                description: "A brief description of Project 1.",
-                details: "Detailed information about Project 1. This section can include the project's objectives, challenges, solutions, and results."
-            },
-            // Weitere Projekte hier hinzufügen
-        };
-    
-        document.querySelectorAll('.accordion-header').forEach(button => {
-            button.addEventListener('click', function() {
-                const projectId = this.getAttribute('data-project');
-                const project = projects[projectId];
-                const content = this.nextElementSibling;
-    
-                if (project) {
-                    if (content.style.display === "block") {
-                        content.style.display = "none";
-                        this.classList.remove('active');
-                    } else {
-                        document.querySelectorAll('.accordion-content').forEach(content => content.style.display = 'none');
-                        document.querySelectorAll('.accordion-header').forEach(header => header.classList.remove('active'));
-                        
-                        content.style.display = "block";
-                        this.classList.add('active');
-                    }
-                } else {
-                    console.warn(`Project with ID '${projectId}' not found.`);
-                }
-            });
-        });
-    });
-    
+    // Initial language setup
+    setLanguage(currentLanguage);
+});
 
 function flipCard(element) {
     element.classList.toggle('flipped');
@@ -137,4 +182,3 @@ function downloadBook(filename, event) {
     
     window.location.href = url;
 }
-

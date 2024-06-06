@@ -328,65 +328,149 @@ button:hover {
 
 
 
-/* Accordion-Styling */
-.accordion {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+/* Projektkarten-Styling */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.accordion-item {
+.project-card {
+    position: relative;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin-bottom: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: black;
+    transition: transform 0.3s;
+    cursor: pointer;
 }
 
-.accordion-header {
-    background-color: #f7f7f7;
-    border: none;
-    outline: none;
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-image {
     width: 100%;
-    text-align: left;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.project-info {
     padding: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 8px 0;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Modal-Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
     align-items: center;
 }
 
-.accordion-header:hover {
-    background-color: #e7e7e7;
-}
-
-.accordion-header h3 {
-    margin: 0;
-}
-
-.accordion-content {
-    display: none;
-    padding: 0 16px 16px 16px;
-}
-
-.accordion-content img {
-    width: 100%;
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
     border-radius: 8px;
-    margin: 10px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.project-description, .project-details {
-    margin: 10px 0;
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.active .accordion-content {
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+.modal-image {
+    max-width: 100%;
+    height: auto;
     display: block;
+    margin: 20px 0;
 }
 
-.active .accordion-header {
-    background-color: #e7e7e7;
+#modal-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
 
+#modal-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#modal-details {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 1.6;
+    width: 100%;
+}
+
+/* Responsive Stile */
+@media (min-width: 1024px) {
+    .project-container {
+        justify-content: center;
+    }
+    .project-card {
+        flex: 1 1 calc(33.333% - 32px); /* Flex grow and shrink, with a third of the container width minus the gap */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .project-card {
+        flex: 1 1 calc(50% - 32px); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .project-card {
+        flex: 1 1 100%; /* Single column on small screens */
+    }
+}  
 
 
 
@@ -448,6 +532,12 @@ button:hover {
     background-color: #555;
 }
 
+.social-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
 #social-media {
     text-align: center;
     margin-top: 2rem;
@@ -455,52 +545,67 @@ button:hover {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    background-size: cover;
+    background-position: center;
 }
 
 #social-media h3 {
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 1rem;
+    color: #333;
+}
+
+#social-media .social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 #social-media a {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px 20px;
-    color: white;
-    border-radius: 4px;
+    display: inline-flex;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+    color: white; /* Set the icon color to white */
+    font-size: 20px;
+}
+
+#social-media a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 #social-media a.facebook {
-    background-color: #3b5998;
+    background: black;
 }
 
-#social-media a.facebook:hover {
-    background-color: #2d4373;
-}
-
-#social-media a.twitter {
-    background-color: #1da1f2;
-}
-
-#social-media a.twitter:hover {
-    background-color: #0c85d0;
+#social-media a.x {
+    background: black;
 }
 
 #social-media a.pinterest {
-    background-color: #bd081c;
-    color: white;
-}
-
-#social-media a.pinterest:hover {
-    background-color: #8c0615;
+    background: black;
 }
 
 #social-media a.instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: black;
 }
 
-#social-media a.instagram:hover {
-    background: linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
+#social-media a.youtube {
+    background: black;
 }
+
+
+
+
+
+
+
