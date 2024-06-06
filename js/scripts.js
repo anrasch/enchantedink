@@ -186,3 +186,14 @@ function downloadBook(filename, event) {
     
     window.location.href = url;
 }
+
+function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
+if (isIOS()) {
+    document.querySelectorAll('.back').forEach(function(element) {
+        element.style.overflowY = 'scroll';
+    });
+}
+
