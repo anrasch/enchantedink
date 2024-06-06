@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
             contactText: "Contact information and a contact form.",
             aboutMe: "About Me",
             shortStories: "Short Stories",
-            bookTitle1: "A Day in Nova Polis"
+            bookTitle1: "A Day in Nova Polis",
+            textShort: "A captivating collection of standalone short stories from the mysterious metropolis of Nova Polis",
+            booktext1: "A Day in Nova Polis, follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.",
         },
         de: {
             title: "Willkommen bei EnchantedInk",
@@ -32,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
             contactText: "Kontaktinformationen und ein Kontaktformular.",
             aboutMe: "Über mich",
             shortStories: "Kurzgeschichten",
-            bookTitle1: "Ein Tag in Nova Polis"
+            bookTitle1: "Ein Tag in Nova Polis",
+            textShort: "Eine faszinierende Sammlung eigenständiger Kurzgeschichten aus der mysteriösen Metropole Nova Polis",
+            booktext1: "Ein Tag in Nova Polis folgt Alex, einem Kurier, der sich durch eine futuristische Stadt der Gegensätze bewegt. Von dem Luxus der Zenith Heights über die Lebendigkeit des Neon Districts, die Industrie des Mechanica Districts und die Ruhe der Elysium Gardens bis hin zu den herausfordernden Dystopia Slums. Durch seine Lieferungen entdeckt Alex die vielfältigen und menschlichen Facetten von Nova Polis."
         }
     };
 
@@ -48,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'title', 'subtitle', 'navAbout', 'navBooks',
             'navProjects', 'navBlog', 'navContact', 'aboutText', 'bookTitle1',
             'books-text', 'projects-text', 'blog-text', 'contact-text', 'aboutMe', 'shortStories',
+            'textShort', 'booktext1',
         ];
 
         elements.forEach(id => {
@@ -74,47 +79,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Projekt-Daten
-    const projects = {
-        1: {
-            title: "Project Title 1",
-            image: "images/project1.jpg",
-            description: "A brief description of Project 1.",
-            details: "Detailed information about Project 1. This section can include the project's objectives, challenges, solutions, and results."
-        },
-        // Weitere Projekte hier hinzufügen
-    };
-
-    const modal = document.getElementById('project-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalImage = document.getElementById('modal-image');
-    const modalDescription = document.getElementById('modal-description');
-    const modalDetails = document.getElementById('modal-details');
-    const closeBtn = document.querySelector('.close-btn');
-
-    document.querySelectorAll('.project-details-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const projectId = this.getAttribute('data-project');
-            const project = projects[projectId];
-
-            modalTitle.innerText = project.title;
-            modalImage.src = project.image;
-            modalDescription.innerText = project.description;
-            modalDetails.innerText = project.details;
-
-            modal.style.display = 'flex';
+        const projects = {
+            1: {
+                title: "Project Title 1",
+                image: "images/project1.jpg",
+                description: "A brief description of Project 1.",
+                details: "Detailed information about Project 1. This section can include the project's objectives, challenges, solutions, and results."
+            },
+            // Weitere Projekte hier hinzufügen
+        };
+    
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', function() {
+                const projectId = this.getAttribute('data-project');
+                const project = projects[projectId];
+                const content = this.nextElementSibling;
+    
+                if (project) {
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                        this.classList.remove('active');
+                    } else {
+                        document.querySelectorAll('.accordion-content').forEach(content => content.style.display = 'none');
+                        document.querySelectorAll('.accordion-header').forEach(header => header.classList.remove('active'));
+                        
+                        content.style.display = "block";
+                        this.classList.add('active');
+                    }
+                } else {
+                    console.warn(`Project with ID '${projectId}' not found.`);
+                }
+            });
         });
     });
-
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-});
+    
 
 function flipCard(element) {
     element.classList.toggle('flipped');
@@ -122,10 +120,21 @@ function flipCard(element) {
 
 function downloadBook(filename, event) {
     event.stopPropagation(); // Prevent flip event from triggering
-    const link = document.createElement('a');
-    link.href = `downloads/${filename}`;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    
+    let url;
+    
+    switch (filename) {
+        case 'book1.pdf':
+            url = 'https://example.com/download-page1';
+            break;
+        case 'book2.pdf':
+            url = 'https://example.com/download-page2';
+            break;
+        // Füge hier weitere Fälle hinzu, falls nötig
+        default:
+            url = 'https://example.com/default-download-page'; // Eine Standardseite für andere Dateien
+    }
+    
+    window.location.href = url;
 }
+
