@@ -58,7 +58,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 1rem;
+    margin: 0.6rem;
     position: relative;
 }
 
@@ -147,13 +147,6 @@ footer {
     transform: translateX(32px); /* Position when toggled - align right */
 }
 
-
-
-
-
-
-
-
 @media (min-width: 600px) {
     .header-content {
         flex-direction: row;
@@ -195,14 +188,16 @@ footer {
 }
 
 .flip-card {
-    width: 200px;
-    height: 300px;
     perspective: 1000px;
-    position: relative; /* Hinzugefügt, um die absolute Positionierung der inneren Elemente zu ermöglichen */
+    position: relative;
+    min-width: 200px;
+    min-height: 300px;
+    width: auto;
+    height: auto;
 }
 
 .flipper {
-    position: relative; /* Geändert von absolute auf relative */
+    position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
@@ -262,6 +257,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: auto;
+    min-height: 300px; /* Minimum height to ensure consistent flipping */
 }
 
 .flipper.flipped {
@@ -283,17 +280,265 @@ button:hover {
     background-color: #555;
 }
 
-
 @media (max-width: 768px) {
     .flip-card {
-        width: 150px;
-        height: 250px;
+        min-width: 150px;
+        min-height: 250px;
+    }
+
+    .back {
+        min-height: 250px; /* Minimum height for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .flip-card {
-        width: 120px;
-        height: 200px;
+        min-width: 120px;
+        min-height: 200px;
     }
+
+    .back {
+        min-height: 200px; /* Minimum height for smaller screens */
+    }
+}
+
+
+
+
+/* Projektkarten-Styling */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin: 8px 0;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.project-details-btn {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.project-details-btn:hover {
+    background-color: #555;
+}
+
+/* Modal-Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+.modal-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Stile */
+@media (min-width: 1024px) {
+    .project-container {
+        justify-content: center;
+    }
+    .project-card {
+        flex: 1 1 calc(33.333% - 32px); /* Flex grow and shrink, with a third of the container width minus the gap */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .project-card {
+        flex: 1 1 calc(50% - 32px); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .project-card {
+        flex: 1 1 100%; /* Single column on small screens */
+    }
+}
+
+
+#contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+#contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#contact-form button {
+    padding: 0.75rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    background-color: #555;
+}
+
+#social-media {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#social-media h3 {
+    margin-bottom: 1rem;
+}
+
+#social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#social-media a.facebook {
+    background-color: #3b5998;
+}
+
+#social-media a.facebook:hover {
+    background-color: #2d4373;
+}
+
+#social-media a.twitter {
+    background-color: #1da1f2;
+}
+
+#social-media a.twitter:hover {
+    background-color: #0c85d0;
+}
+
+#social-media a.pinterest {
+    background-color: #bd081c;
+    color: white;
+}
+
+#social-media a.pinterest:hover {
+    background-color: #8c0615;
+}
+
+#social-media a.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+#social-media a.instagram:hover {
+    background: linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
 }

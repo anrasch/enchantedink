@@ -24,22 +24,23 @@
     
     <nav>
         <ul>
-            <li><a href="#about" id="nav-about">About</a></li>
-            <li><a href="#books" id="nav-books">Books</a></li>
-            <li><a href="#projects" id="nav-projects">Projects</a></li>
-            <li><a href="#contact" id="nav-contact">Contact</a></li>
-            <li><a href="#blog" id="nav-blog" class="hidden">Blog</a></li>
+            <li><a href="#about" id="navAbout">About</a></li>
+            <li><a href="#books" id="navBooks">Books</a></li>
+            <li><a href="#projects" id="navProjects">Projects</a></li>
+            <li><a href="#contact" id="navContact">Contact</a></li>
+            <li><a href="#blog" id="navBlog" class="hidden">Blog</a></li>
         </ul>
     </nav>
 
     <main>
         <section id="about">
             <h2 id="aboutMe" class="about">About Me</h2>
-            <p id="about-text" class="about">Hi, I'm Anthony and I'm a writer. Currently, I'm working on a series of short stories as well as writing a book. Besides writing, I have developed a passion for web design, which led to the creation of this website. On my website, you'll find my latest projects and publications. I'm excited to share my stories and creative projects with you. You can reach out to me through social media; the links are at the end of the website. Thank you for visiting!</p>
+            <p id="aboutText" class="about">Hi, I'm Anthony and I'm a writer. Currently, I'm working on a series of short stories as well as writing a book. Besides writing, I have developed a passion for web design, which led to the creation of this website. On my website, you'll find my latest projects and publications. I'm excited to share my stories and creative projects with you. You can reach out to me through social media; the links are at the end of the website. Thank you for visiting!</p>
         </section> 
 
         <section id="books">
-            <h2>Books</h2>
+            <h2 id="shortStories">Short Stories</h2>
+            <p>A series of independent short stories from Nova Polis</p>
             <div class="flip-card-container">
                 <div class="flip-card">
                     <div class="flipper" onclick="flipCard(this)">
@@ -48,8 +49,8 @@
                             <div class="overlay">View Details</div>
                         </div>
                         <div class="back">
-                            <h3>Book Title 1</h3>
-                            <p>Some information about Book 1.</p>
+                            <h3 id="bookTitle1">A Day in Nova Polis</h3>
+                            <p>A Day in Nova Polis" follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.</p>
                             <button onclick="downloadBook('book1.pdf', event)">Download</button>
                         </div>
                     </div>
@@ -86,8 +87,37 @@
         
         <section id="projects">
             <h2>Projects</h2>
-            <p id="projects-text">Detailed descriptions of your projects.</p>
+            <div class="project-card">
+                <img src="images/project1.jpg" alt="Project 1" class="project-image">
+                <h3 class="project-title">Project Title 1</h3>
+                <p class="project-description">A brief description of Project 1.</p>
+                <button class="project-details-btn" data-project="1">Details</button>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.jpg" alt="Project 2" class="project-image">
+                <h3 class="project-title">Project Title 2</h3>
+                <p class="project-description">A brief description of Project 2.</p>
+                <button class="project-details-btn" data-project="2">Details</button>
+            </div>
+            <div class="project-card">
+                <img src="images/project3.jpg" alt="Project 3" class="project-image">
+                <h3 class="project-title">Project Title 3</h3>
+                <p class="project-description">A brief description of Project 3.</p>
+                <button class="project-details-btn" data-project="3">Details</button>
+            </div>
+            <!-- Weitere Projektkarten hier hinzufügen -->
         </section>
+
+        <!-- Modales Fenster für Projektdetails -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-title"></h2>
+                <img id="modal-image" src="" alt="Project Image" class="modal-image">
+                <p id="modal-description"></p>
+                <p id="modal-details"></p>
+            </div>
+        </div>
 
         <section id="blog" class="hidden">
             <h2>Blog</h2>
@@ -101,22 +131,36 @@
             </article>
         </section>
         
-        <section id="contact">
+        <section id="contact" class="hidden">
             <h2>Contact</h2>
-            <p id="contact-text">Feel free to reach out to me for any inquiries or just to say hello. You can contact me at:</p>
-            <ul>
-                <li>Email: enchantedink@example.com</li>
-                <li>Social Media: [Links to your social media profiles]</li>
-            </ul>
-            <form>
+            <form id="contact-form">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send</button>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="subject">Betreff:</label>
+                <select id="subject" name="subject" required>
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="general">Allgemeine Anfrage</option>
+                    <option value="project">Projektanfrage</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Absenden</button>
             </form>
+        </section>
+
+        <section id="social-media">
+            <h3>Follow us</h3>
+            <a href="https://www.facebook.com" target="_blank" class="btn facebook">Facebook</a>
+            <a href="https://www.twitter.com" target="_blank" class="btn twitter">X</a>
+            <a href="https://www.pinterest.com" target="_blank" class="btn pinterest">Pinterest</a>
+            <a href="https://www.instagram.com" target="_blank" class="btn instagram">Instagram</a>
         </section>
 
     </main>
