@@ -194,9 +194,9 @@ footer {
     min-height: 300px;
     width: auto;
     height: auto;
-    overflow: hidden; /* Verhindert das Überlaufen des Inhalts */
-    margin: 10px; /* Fügt Abstand zwischen den Karten hinzu */
-    flex: 1 1 auto; /* Erlaubt Flexibilität innerhalb des Containers */
+    overflow: hidden;
+    margin: 10px;
+    flex: 1 1 auto;
 }
 
 .flipper {
@@ -258,11 +258,11 @@ footer {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Titel am oberen Rand anzeigen */
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
-    overflow-y: auto; /* Ermöglicht vertikales Scrollen bei zu viel Inhalt */
-    -webkit-overflow-scrolling: touch; /* Verbessert das Scrollen auf iOS-Geräten */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .flipper.flipped {
@@ -291,7 +291,7 @@ button:hover {
     }
 
     .back {
-        min-height: 250px; /* Minimum height for smaller screens */
+        min-height: 250px;
     }
 }
 
@@ -302,11 +302,10 @@ button:hover {
     }
 
     .back {
-        min-height: 200px; /* Minimum height for smaller screens */
+        min-height: 200px;
     }
 }
 
-/* Hinzufügen eines Scroll-Overlays für bessere Sichtbarkeit der Scrollbars */
 .back::-webkit-scrollbar {
     width: 8px;
 }
