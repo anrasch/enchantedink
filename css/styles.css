@@ -194,6 +194,9 @@ footer {
     min-height: 300px;
     width: auto;
     height: auto;
+    overflow: hidden; /* Verhindert das Überlaufen des Inhalts */
+    margin: 10px; /* Fügt Abstand zwischen den Karten hinzu */
+    flex: 1 1 auto; /* Erlaubt Flexibilität innerhalb des Containers */
 }
 
 .flipper {
@@ -257,8 +260,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
-    min-height: 300px; /* Minimum height to ensure consistent flipping */
+    height: 100%;
+    overflow: auto; /* Ermöglicht das Scrollen bei zu viel Inhalt */
 }
 
 .flipper.flipped {
@@ -301,6 +304,7 @@ button:hover {
         min-height: 200px; /* Minimum height for smaller screens */
     }
 }
+
 
 
 
