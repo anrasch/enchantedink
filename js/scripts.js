@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navProjects: "Projects",
             navBlog: "Blog",
             navContact: "Contact",
-            aboutText: "Hi, I'm Anthony and I'm a writer...",
+            aboutText: "Hi, I'm Anthony and I'm a writer. Currently, I'm working on a series of short stories as well as writing a book. Besides writing, I have developed a passion for web design, which led to the creation of this website. On my website, you'll find my latest projects and publications. I'm excited to share my stories and creative projects with you. You can reach out to me through social media; the links are at the end of the website. Thank you for visiting!",
             booksText: "Detailed descriptions of your books or short stories.",
             projectsText: "Detailed descriptions of your projects.",
             blogText: "Regular posts about your writing processes, inspirations, and news.",
@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutMe: "About Me",
             shortStories: "Short Stories",
             bookTitle1: "A Day in Nova Polis",
-            textShort: "A captivating collection of standalone short stories...",
-            booktext1: "A Day in Nova Polis, follows Alex...",
+            textShort: "Unique Tales from Nova Polis: Each short story a captivating adventure in the futuristic city.",
+            booktext1: "A Day in Nova Polis, follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.",
+            bookTitle3: "",
+            booktext3: "",
             projects: {
                 1: {
                     title: "Project Title 1",
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navProjects: "Projekte",
             navBlog: "Blog",
             navContact: "Kontakt",
-            aboutText: "Hallo, ich bin Anthony und ich bin Schriftsteller...",
+            aboutText: "Hallo, ich bin Anthony und ich bin Schriftsteller. Zurzeit arbeite ich an einer Reihe von Kurzgeschichten sowie an einem Buch. Neben dem Schreiben habe ich eine Leidenschaft für Webdesign entwickelt, was zur Erstellung dieser Website führte. Auf meiner Website finden Sie meine neuesten Projekte und Veröffentlichungen. Ich freue mich darauf, meine Geschichten und kreativen Projekte mit Ihnen zu teilen. Sie können mich über soziale Medien erreichen; die Links finden Sie am Ende der Website. Vielen Dank für Ihren Besuch!",
             booksText: "Detaillierte Beschreibungen Ihrer Bücher oder Kurzgeschichten.",
             projectsText: "Detaillierte Beschreibungen Ihrer Projekte.",
             blogText: "Regelmäßige Beiträge über Ihre Schreibprozesse, Inspirationen und Neuigkeiten.",
@@ -49,8 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutMe: "Über mich",
             shortStories: "Kurzgeschichten",
             bookTitle1: "Ein Tag in Nova Polis",
-            textShort: "Eine faszinierende Sammlung eigenständiger Kurzgeschichten...",
-            booktext1: "Ein Tag in Nova Polis folgt Alex...",
+            textShort: "Einzigartige Geschichten aus Nova Polis: Jede Kurzgeschichte ein faszinierendes Abenteuer in der Zukunftsstadt.",
+            booktext1: "Ein Tag in Nova Polis, folgt Alex, einem Kurier, der sich durch eine futuristische Stadt der Gegensätze bewegt. Von der Luxus von Zenith Heights über die Lebendigkeit des Neon Districts, die Industrie des Mechanica Districts und die Ruhe der Elysium Gardens bis hin zu den herausfordernden Dystopia Slums. Durch seine Lieferungen entdeckt Alex die vielfältigen und menschlichen Facetten von Nova Polis.",
+            bookTitle3: "",
+            booktext3: "",
             projects: {
                 1: {
                     title: "Projekt Titel 1",
