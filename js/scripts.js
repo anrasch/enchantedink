@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
             booktext3: "",
             projects: {
                 1: {
-                    title: "Project Title 1",
+                    title: "Shadows of Revolution",
                     image: "images/project1.jpg",
-                    description: "A brief description of Project 1.",
-                    details: "Detailed information about Project 1. This section can include the project's objectives, challenges, solutions, and results."
+                    description: "Draft - Work in Progress",
+                    details: "Shadows of Revolution is a gripping dystopian novel that immerses the reader in the dark world of the city of Ecliptas. In a society controlled by megacorporations, Maya and Gabe fight against oppression and for freedom. The protagonist, Maya, shaped by her unique heritage and deep determination, is at the center of this fight. Together with her group of rebels, she tries to bring the truth about the rulers' machinations to light and mobilize the citizens of Ecliptas. The plot is filled with tension, secrets, and moral dilemmas that captivate the reader. The strength of the book lies not only in its suspenseful storyline but also in its profound characters and the complex relationships that connect them. Anthony succeeds in captivating readers with vivid descriptions and a detailed world where every decision has far-reaching consequences. Shadows of Revolution is more than just a story about rebellion; it is a call for reflection on power, freedom, and the role of the individual in society. A must-read for fans of dystopian literature and thrilling adventure stories."   
                 },
                 2: {
                     title: "Project Title 2",
@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
             booktext3: "",
             projects: {
                 1: {
-                    title: "Projekt Titel 1",
+                    title: "Shadows of Revolution",
                     image: "images/project1.jpg",
-                    description: "Eine kurze Beschreibung des Projekts 1.",
+                    description: "Entwurf - In Arbeit",
                     details: "Detaillierte Informationen über das Projekt 1. Dieser Abschnitt kann die Ziele, Herausforderungen, Lösungen und Ergebnisse des Projekts enthalten."
                 },
                 2: {
