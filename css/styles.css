@@ -261,8 +261,8 @@ footer {
     justify-content: flex-start;
     align-items: center;
     height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: auto; /* Ermöglicht vertikales Scrollen bei zu viel Inhalt */
+    -webkit-overflow-scrolling: touch; /* Verbessert das Scrollen auf iOS-Geräten */
 }
 
 .flipper.flipped {
@@ -319,6 +319,8 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+
+
 
 
 
