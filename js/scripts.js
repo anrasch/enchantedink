@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const translations = {
         en: {
-            title: "Welcome to EnchantedInk",
+            title: "Welcome to LunaScript",
             subtitle: "Author of Fantasy Novels and Short Stories",
             navAbout: "About",
             navBooks: "Books",
@@ -9,10 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
             navBlog: "Blog",
             navContact: "Contact",
             aboutText: "Hi, I'm Anthony and I'm a writer. Currently, I'm working on a series of short stories as well as writing a book. Besides writing, I have developed a passion for web design, which led to the creation of this website. On my website, you'll find my latest projects and publications. I'm excited to share my stories and creative projects with you. You can reach out to me through social media; the links are at the end of the website. Thank you for visiting!",
-            booksText: "Detailed descriptions of your books or short stories.",
-            projectsText: "Detailed descriptions of your projects.",
+            projectsText: "Projects",
             blogText: "Regular posts about your writing processes, inspirations, and news.",
-            contactText: "Contact information and a contact form.",
+            contactText: "Contact",
             aboutMe: "About Me",
             shortStories: "Short Stories",
             bookTitle1: "A Day in Nova Polis",
@@ -20,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
             booktext1: "A Day in Nova Polis, follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.",
             bookTitle3: "",
             booktext3: "",
+            button1: "Download for free",
+            follow: "Follow us",
             projects: {
                 1: {
                     title: "Shadows of Revolution",
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         de: {
-            title: "Willkommen bei EnchantedInk",
+            title: "Willkommen bei LunaScript",
             subtitle: "Autor von Fantasy-Romanen und Kurzgeschichten",
             navAbout: "Über mich",
             navBooks: "Bücher",
@@ -44,10 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
             navBlog: "Blog",
             navContact: "Kontakt",
             aboutText: "Hallo, ich bin Anthony und ich bin Schriftsteller. Zurzeit arbeite ich an einer Reihe von Kurzgeschichten sowie an einem Buch. Neben dem Schreiben habe ich eine Leidenschaft für Webdesign entwickelt, was zur Erstellung dieser Website führte. Auf meiner Website finden Sie meine neuesten Projekte und Veröffentlichungen. Ich freue mich darauf, meine Geschichten und kreativen Projekte mit Ihnen zu teilen. Sie können mich über soziale Medien erreichen; die Links finden Sie am Ende der Website. Vielen Dank für Ihren Besuch!",
-            booksText: "Detaillierte Beschreibungen Ihrer Bücher oder Kurzgeschichten.",
-            projectsText: "Detaillierte Beschreibungen Ihrer Projekte.",
+            projectsText: "Projekte",
             blogText: "Regelmäßige Beiträge über Ihre Schreibprozesse, Inspirationen und Neuigkeiten.",
-            contactText: "Kontaktinformationen und ein Kontaktformular.",
+            contactText: "Kontakt",
             aboutMe: "Über mich",
             shortStories: "Kurzgeschichten",
             bookTitle1: "Ein Tag in Nova Polis",
@@ -55,12 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
             booktext1: "Ein Tag in Nova Polis, folgt Alex, einem Kurier, der sich durch eine futuristische Stadt der Gegensätze bewegt. Von der Luxus von Zenith Heights über die Lebendigkeit des Neon Districts, die Industrie des Mechanica Districts und die Ruhe der Elysium Gardens bis hin zu den herausfordernden Dystopia Slums. Durch seine Lieferungen entdeckt Alex die vielfältigen und menschlichen Facetten von Nova Polis.",
             bookTitle3: "",
             booktext3: "",
+            button1: "Kostenlos herunterladen",
+            follow: "Folge uns",
             projects: {
                 1: {
                     title: "Shadows of Revolution",
                     image: "images/project1.jpg",
                     description: "Entwurf - In Arbeit",
-                    details: "Detaillierte Informationen über das Projekt 1. Dieser Abschnitt kann die Ziele, Herausforderungen, Lösungen und Ergebnisse des Projekts enthalten."
+                    details: "Shadows of Revolution ist ein fesselnder dystopischer Roman, der den Leser in die dunkle Welt der Stadt Ecliptas eintauchen lässt. In einer Gesellschaft, die von Megakonzernen kontrolliert wird, kämpfen Maya und Gabe gegen Unterdrückung und für Freiheit. Die Protagonistin Maya, geprägt durch ihr einzigartiges Erbe und ihren tiefen Entschluss, steht im Zentrum dieses Kampfes. Zusammen mit ihrer Gruppe von Rebellen versucht sie, die Wahrheit über die Machenschaften der Herrscher ans Licht zu bringen und die Bürger von Ecliptas zu mobilisieren. Die Handlung ist voller Spannung, Geheimnisse und moralischer Dilemmata, die den Leser fesseln. Die Stärke des Buches liegt nicht nur in seiner spannenden Handlung, sondern auch in seinen tiefgründigen Charakteren und den komplexen Beziehungen, die sie verbinden. Anthony gelingt es, die Leser mit lebendigen Beschreibungen und einer detaillierten Welt zu fesseln, in der jede Entscheidung weitreichende Konsequenzen hat. Schatten der Revolution ist mehr als nur eine Geschichte über Aufstand; es ist ein Aufruf zur Reflexion über Macht, Freiheit und die Rolle des Individuums in der Gesellschaft. Ein Muss für Fans von dystopischer Literatur und spannenden Abenteuergeschichten."
                 },
                 2: {
                     title: "Projekt Titel 2",
@@ -83,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const elements = [
             'title', 'subtitle', 'navAbout', 'navBooks',
             'navProjects', 'navBlog', 'navContact', 'aboutText', 'bookTitle1',
-            'books-text', 'projects-text', 'blog-text', 'contact-text', 'aboutMe', 'shortStories',
-            'textShort', 'booktext1',
+            'projectsText', 'blog-text', 'contactText', 'aboutMe', 'shortStories',
+            'textShort', 'booktext1', 'button1', 'follow',
         ];
 
         elements.forEach(id => {

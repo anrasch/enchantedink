@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnchantedInk</title>
+    <title>LunaScript</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
@@ -13,7 +13,7 @@
         <div class="header-content">
             <img src="images/logo.png" alt="EnchantedInk Logo" class="logo">
             <div class="title-container">
-                <h1 id="title">Welcome to EnchantedInk</h1>
+                <h1 id="title">Welcome to LunaScript</h1>
                 <p id="subtitle">Author of Fantasy Novels and Short Stories</p>
             </div>
         </div>
@@ -52,7 +52,7 @@
                         <div class="back">
                             <h3 id="bookTitle1">A Day in Nova Polis</h3>
                             <p id="booktext1">A Day in Nova Polis, follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.</p>
-                            <button onclick="downloadBook('book1.pdf', event)">Download</button>
+                            <button onclick="downloadBook('book1.pdf', event)" id="button1">Download</button>
                         </div>
                     </div>
                 </div>
@@ -98,23 +98,25 @@
                 <!-- Weitere Flip-Karten hier hinzufügen -->
             </div>
         </section>
+
+        <h2 class="about" id="projectsText">Projects</h2>
         
         <section id="projects" class="project-container">
-            <div class="project-card" data-project="1">
-                <img src="images/project1.jpg" alt="Project 1" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">Project Title 1</h3>
-                    <p class="project-description">A brief description of Project 1.</p>
+                <div class="project-card" data-project="1">
+                    <img src="images/project1.jpg" alt="Project 1" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Project Title 1</h3>
+                        <p class="project-description">A brief description of Project 1.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="project-card" data-project="2">
-                <img src="images/project2.jpg" alt="Project 2" class="project-image">
-                <div class="project-info">
-                    <h3 class="project-title">Project Title 2</h3>
-                    <p class="project-description">A brief description of Project 2.</p>
+                <div class="project-card" data-project="2">
+                    <img src="images/project2.jpg" alt="Project 2" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">Project Title 2</h3>
+                        <p class="project-description">A brief description of Project 2.</p>
+                    </div>
                 </div>
-            </div>
-            <!-- Weitere Projekte hier hinzufügen -->
+                <!-- Weitere Projekte hier hinzufügen -->
         </section>
     
         <div id="project-modal" class="modal">
@@ -163,18 +165,20 @@
             </form>
         </section>
 
+        <h2 class="about" id="contactText">Contact</h2>
+
         <section id="social-media">
-            <h3>Follow us</h3>
+            <h3 id="follow">Follow us</h3>
             <a href="https://www.facebook.com" target="_blank" class="btn facebook" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.x.com" target="_blank" class="btn x" title="Follow us on X"><i class="fab fa-x-twitter"></i></a>
             <a href="https://www.pinterest.com" target="_blank" class="btn pinterest" title="Follow us on Pinterest"><i class="fab fa-pinterest"></i></a>
             <a href="https://www.instagram.com" target="_blank" class="btn instagram" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com" target="_blank" class="btn youtube" title="Follow us on YouTube"><i class="fab fa-youtube"></i></a>
+        <!--     <a href="https://www.youtube.com" target="_blank" class="btn youtube" title="Follow us on YouTube"><i class="fab fa-youtube"></i></a>
+           <a href="https://www.x.com" target="_blank" class="btn x" title="Follow us on X"><i class="fab fa-x-twitter"></i></a> -->
         </section>
         
     </main>
     <footer>
-        <p>&copy; 2024 EnchantedInk. All rights reserved.</p>
+        <p>&copy; 2024 LunaScript. All rights reserved.</p>
     </footer>
 </body>
 </html>
