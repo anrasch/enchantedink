@@ -17,9 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
             bookTitle1: "A Day in Nova Polis",
             textShort: "Unique Tales from Nova Polis: Each short story a captivating adventure in the futuristic city.",
             booktext1: "A Day in Nova Polis, follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.",
-            bookTitle3: "",
-            booktext3: "",
-            button1: "Download for free",
+            bookTitle2: "Nadia Volkov and the Energy of the Future",
+            booktext2: "In Nova Polis, engineer Nadia Volkov develops a revolutionary energy core designed to improve the slums and make the industry more efficient. With the support of union leader Max and tech CEO Aria, she fights against corrupt leaders. Despite resistance, they manage to take control of the city's central energy hub and create sustainable change. Will their vision of a fairer and more sustainable future become a reality?",
+            button1: "Buy Now in EN",
+            button2: "Buy Now in DE",
+            button3: "Coming soon",
+            button4: "Buy Now in DE",
             follow: "Follow us",
             projects: {
                 1: {
@@ -53,9 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
             bookTitle1: "Ein Tag in Nova Polis",
             textShort: "Einzigartige Geschichten aus Nova Polis: Jede Kurzgeschichte ein faszinierendes Abenteuer in der Zukunftsstadt.",
             booktext1: "Ein Tag in Nova Polis, folgt Alex, einem Kurier, der sich durch eine futuristische Stadt der Gegensätze bewegt. Von der Luxus von Zenith Heights über die Lebendigkeit des Neon Districts, die Industrie des Mechanica Districts und die Ruhe der Elysium Gardens bis hin zu den herausfordernden Dystopia Slums. Durch seine Lieferungen entdeckt Alex die vielfältigen und menschlichen Facetten von Nova Polis.",
-            bookTitle3: "",
-            booktext3: "",
-            button1: "Kostenlos herunterladen",
+            bookTitle2: "Nadia Volkov und die Energie der Zukunft",
+            booktext2: "In Nova Polis entwickelt Ingenieurin Nadia Volkov einen revolutionären Energiekern, der die Slums verbessern und die Industrie effizienter machen soll. Mit Unterstützung von Gewerkschaftsführer Max und Tech-CEO Aria kämpft sie gegen korrupte Machthaber. Trotz Widerständen gelingt es ihnen, die zentrale Energiezentrale zu übernehmen und die Stadt nachhaltig zu verändern. Wird ihre Vision von einer gerechteren und nachhaltigeren Zukunft Wirklichkeit werden?",
+            button1: "Jetzt kaufen in EN",
+            button2: "Jetzt kaufen in DE",
+            button3: "Demnächst verfügbar",
+            button4: "Jetzt kaufen in DE",
             follow: "Folge uns",
             projects: {
                 1: {
@@ -86,7 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'title', 'subtitle', 'navAbout', 'navBooks',
             'navProjects', 'navBlog', 'navContact', 'aboutText', 'bookTitle1',
             'projectsText', 'blog-text', 'contactText', 'aboutMe', 'shortStories',
-            'textShort', 'booktext1', 'button1', 'follow',
+            'textShort', 'booktext1', 'button1', 'follow', 'button2', 'bookTitle2',
+            'booktext2', 'button3', 'button4',
         ];
 
         elements.forEach(id => {
@@ -176,10 +183,16 @@ function downloadBook(filename, event) {
     
     switch (filename) {
         case 'book1.pdf':
-            url = 'https://example.com/download-page1';
+            url = 'www.instagram.com';
             break;
         case 'book2.pdf':
-            url = 'https://example.com/download-page2';
+            url = 'https://books2read.com/u/mlylwZ';
+            break;
+        case 'book3.pdf':
+            url = '';
+            break;
+        case 'book4.pdf':
+            url = 'https://books2read.com/u/mlylwZ';
             break;
         // Füge hier weitere Fälle hinzu, falls nötig
         default:

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LunaScript</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
@@ -52,20 +53,22 @@
                         <div class="back">
                             <h3 id="bookTitle1">A Day in Nova Polis</h3>
                             <p id="booktext1">A Day in Nova Polis, follows Alex, a courier navigating a futuristic city of contrasts. From the luxury of Zenith Heights to the vibrancy of the Neon District, the industry of the Mechanica District, and the peace of Elysium Gardens, ending in the challenging Dystopia Slums. Through his deliveries, Alex discovers the diverse and human facets of Nova Polis.</p>
-                            <button onclick="downloadBook('book1.pdf', event)" id="button1">Download</button>
+                            <button onclick="downloadBook('book1.pdf', event)" id="button1">Buy Now in EN</button>
+                            <button onclick="downloadBook('book2.pdf', event)" id="button2">Buy Now in DE</button>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card hidden">
+                <div class="flip-card">
                     <div class="flipper" onclick="flipCard(this)">
                         <div class="front">
                             <img src="images/book2.jpg" alt="Book 2">
                             <div class="overlay">View Details</div>
                         </div>
                         <div class="back">
-                            <h3>Book Title 2</h3>
-                            <p>Some information about Book 2.</p>
-                            <button onclick="downloadBook('book2.pdf', event)">Download</button>
+                            <h3 id="bookTitle2">Nadia Volkov and the Energy of the Future</h3>
+                            <p id="booktext2">In Nova Polis, engineer Nadia Volkov develops a revolutionary energy core designed to improve the slums and make the industry more efficient. With the support of union leader Max and tech CEO Aria, she fights against corrupt leaders. Despite resistance, they manage to take control of the city's central energy hub and create sustainable change. Will their vision of a fairer and more sustainable future become a reality?</p>
+                            <button onclick="downloadBook('book3.pdf', event)" id="button3">Coming soon</button>
+                        <!--    <button onclick="downloadBook('book4.pdf', event)" id="button4">Buy Now in DE</button>  -->
                         </div>
                     </div>
                 </div>
@@ -81,20 +84,7 @@
                             <button onclick="downloadBook('book2.pdf', event)">Download</button>
                         </div>
                     </div>
-                </div>
-                <div class="flip-card hidden">
-                    <div class="flipper" onclick="flipCard(this)">
-                        <div class="front">
-                            <img src="images/book4.jpg" alt="Book 2">
-                            <div class="overlay">View Details</div>
-                        </div>
-                        <div class="back">
-                            <h3>Book Title 4</h3>
-                            <p>Some information about Book 4.</p>
-                            <button onclick="downloadBook('book2.pdf', event)">Download</button>
-                        </div>
-                    </div>
-                </div>             
+                </div>          
                 <!-- Weitere Flip-Karten hier hinzufügen -->
             </div>
         </section>
