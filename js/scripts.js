@@ -206,7 +206,7 @@ function downloadBook(filename, event) {
     
     switch (filename) {
         case 'book1.pdf':
-            url = 'Englische version';
+            url = 'https://books2read.com/u/bodX11';
             break;
         case 'book2.pdf':
             url = 'https://books2read.com/u/mlylwZ';
